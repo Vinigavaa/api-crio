@@ -6,6 +6,8 @@ import com.crio.api.repositorie.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -23,4 +25,7 @@ public class UsuarioService {
         return newUsuario;
     }
 
+    public List<Usuario> getAllUsers() {
+        return usuarioRepository.findAll();
+    }
 }
