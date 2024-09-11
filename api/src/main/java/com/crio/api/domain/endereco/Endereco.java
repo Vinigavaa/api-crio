@@ -1,5 +1,4 @@
-package com.crio.api.domain.convite;
-
+package com.crio.api.domain.endereco;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,16 +8,20 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-@Table(name="Convite")
+@Table(name = "endereco")
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Convite {
+public class Endereco {
     @Id
-    @GeneratedValue UUID id;
+    @GeneratedValue
+    UUID id;
 
     @Column(nullable = false)
-    private Boolean confirmacao_presenca;
+    private String city;
+
+    @Column(nullable = false, length = 2)
+    private String uf;
 }
